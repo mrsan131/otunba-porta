@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="trabajos | otunba bullerengue" description="trabajos de otunba bullerengue">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Otunbá Bullerengue"
+				tagline="Es un colectivo musical y un proyecto educativo en torno a los aires del bullerengue colombiano, que recoge las prácticas musicales y dancísticas de los bailes cantaos de la región del Caribe. Nace en la ciudad de Pereira, y está conformada por jóvenes y adultos de diferentes regiones del país."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Nosotros somos...</h2>
+				<div class="content">
+					<p>
+						Somos una agrupación musical que tiene como eje central las prácticas musicales y dancísticas de los aires del bullerengue: “bailes cantados” propios de la región Caribe Colombiana. Nacemos en la ciudad de Pereira como una manifestación artística urbana, representamos el arraigo cultural contemporáneo surgido en los últimos tiempos en el departamento de Risaralda como consecuencia de la confluencia intercultural entre la población afro, indígena y mestiza que habita hoy en el territorio.
+					</p>
+					<p>
+						Nuestro nombre es una composición léxica que hace  homenaje al idioma Emberá Chamí, consta de dos vocablos: “Otún” río que atraviesa la ciudad de Pereira, y “bá” o “baa” que significa “aguas o líquido” así pues,  rendimos también culto a las aguas dulces del Otún como fuente de vida de nuestro territorio.
+					</p>
+					<p>
+						Nuestro sonido es un diálogo entre la tradición y lo contemporáneo. La capoeira, el teatro, la narración oral, las composiciones inéditas en torno a la actual realidad colombiana y las vivencias de nuestros integrantes hacen parte de la propuesta original de Otunbá, que busca no desligarse de las raíces. 
+					</p>
+				</div>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
